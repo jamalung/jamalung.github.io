@@ -3,107 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SEB - Ujian dan Alat Bantu</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            text-align: center;
-            padding-top: 60px;
             margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #222;
         }
 
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
         }
 
-        p {
-            color: #666;
+        /* HEADER */
+        .header {
+            text-align: center;
             margin-bottom: 30px;
         }
 
-        .links {
-            width: 420px;
-            max-width: 90%;
-            margin: auto;
+        .header h1 {
+            margin-bottom: 8px;
+            font-size: 32px;
         }
 
-        .links a {
+        .header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* SECTION */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        /* EXAM */
+        .exam-section {
+            border-top: 7px solid #198754;
+        }
+
+        .exam-button {
             display: block;
-            padding: 16px;
-            margin: 14px 0;
-            background: #0066cc;
+            width: 100%;
+            padding: 20px;
+            background: #198754;
             color: white;
+            text-align: center;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
+            border-radius: 9px;
+            font-size: 21px;
             font-weight: bold;
         }
 
-        .links a:hover {
-            background: #004999;
-        }
-
-        .exam {
-            background: #198754;
-        }
-
-        .exam:hover {
+        .exam-button:hover {
             background: #146c43;
         }
 
-        .note {
-            margin-top: 28px;
+        .exam-note {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e9f7ef;
+            border-radius: 7px;
+            color: #145c35;
             font-size: 14px;
+        }
+
+        /* TOOLS */
+        .tools-section {
+            border-top: 7px solid #0d6efd;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .tool-button {
+            display: block;
+            padding: 18px 10px;
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .tool-button:hover {
+            background: #084298;
+        }
+
+        /* INSTRUCTIONS */
+        .instruction-section {
+            border-top: 7px solid #6c757d;
+        }
+
+        .instruction {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 5px solid #6c757d;
+        }
+
+        .instruction:last-child {
+            margin-bottom: 0;
+        }
+
+        .instruction strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .key {
+            display: inline-block;
+            padding: 4px 9px;
+            background: #212529;
+            color: white;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        /* EXIT */
+        .exit-section {
+            border-top: 7px solid #dc3545;
+        }
+
+        .exit-warning {
+            background: #fff3f3;
+            border: 1px solid #f1b0b7;
+            padding: 18px;
+            border-radius: 8px;
+            color: #842029;
+        }
+
+        .exit-warning strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
             color: #777;
+            font-size: 13px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 650px) {
+
+            .container {
+                width: 94%;
+                margin-top: 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Ujian dan Alat Bantu</h1>
+<div class="container">
 
-    <p>Silakan buka ujian terlebih dahulu, kemudian gunakan alat bantu yang diizinkan.</p>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Ujian dan Alat Bantu</h1>
+        <p>
+            Safe Exam Browser — Silakan baca petunjuk sebelum memulai ujian.
+        </p>
+    </div>
 
-    <div class="links">
 
-        <!-- Jendela ujian utama -->
-        <a class="exam"
-           href="https://b.socrative.com/student-v2/join"
-           target="_blank"
-           rel="noopener noreferrer">
-            Mulai Ujian — Socrative
+    <!-- UJIAN -->
+    <div class="section exam-section">
+
+        <div class="section-title">
+            🟢 AREA UJIAN
+        </div>
+
+        <a
+            class="exam-button"
+            href="https://b.socrative.com/student-v2/join"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            MULAI UJIAN — SOCRATIVE
         </a>
 
-        <!-- Jendela alat bantu 1 -->
-        <a href="https://www.desmos.com/"
-           target="_blank"
-           rel="noopener noreferrer">
-            Kalkulator — Desmos
-        </a>
-
-        <!-- Jendela alat bantu 2 -->
-        <a href="https://translate.google.ca/?sl=auto&tl=it&op=translate"
-           target="_blank"
-           rel="noopener noreferrer">
-            Google Translate
-        </a>
-
-        <!-- Jendela alat bantu 3 -->
-        <a href="https://khanacademy.org/"
-           target="_blank"
-           rel="noopener noreferrer">
-            Khan Academy
-        </a>
+        <div class="exam-note">
+            <strong>Perhatian:</strong>
+            Klik tombol di atas untuk membuka halaman ujian.
+            Jangan menutup SEB selama ujian berlangsung.
+        </div>
 
     </div>
 
-    <div class="note">
-        Semua tautan akan dibuka di jendela tambahan SEB.
+
+    <!-- ALAT BANTU -->
+    <div class="section tools-section">
+
+        <div class="section-title">
+            🔵 ALAT BANTU YANG DIIZINKAN
+        </div>
+
+        <div class="tool-grid">
+
+            <a
+                class="tool-button"
+                href="https://www.desmos.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🧮<br>
+                Kalkulator<br>
+                Desmos
+            </a>
+
+            <a
+                class="tool-button"
+                href="https://translate.google.ca/?sl=auto&tl=it&op=translate"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🌐<br>
+                Google<br>
+                Translate
+            </a>
+
+            <a
+                class="tool-button"
+                href="https://khanacademy.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📚<br>
+                Khan<br>
+                Academy
+            </a>
+
+        </div>
+
     </div>
+
+
+    <!-- PETUNJUK NAVIGASI -->
+    <div class="section instruction-section">
+
+        <div class="section-title">
+            ⌨️ PETUNJUK NAVIGASI
+        </div>
+
+        <div class="instruction">
+
+            <strong>
+                Berpindah antara jendela ujian dan alat bantu
+            </strong>
+
+            Gunakan:
+
+            <br><br>
+
+            <span class="key">Alt</span>
+            +
+            <span class="key">Tab</span>
+
+            <br><br>
+
+            Tekan dan tahan tombol <strong>Alt</strong>,
+            kemudian tekan <strong>Tab</strong> untuk berpindah
+            antara jendela yang sedang terbuka.
+
+        </div>
+
+
+        <div class="instruction">
+
+            <strong>
+                Kembali ke jendela sebelumnya
+            </strong>
+
+            Tekan:
+
+            <br><br>
+
+            <span class="key">Alt</span>
+            +
+            <span class="key">Tab</span>
+
+            beberapa kali sampai jendela yang diinginkan
+            menjadi aktif.
+
+        </div>
+
+
+        <div class="instruction">
+
+            <strong>
+                Penting
+            </strong>
+
+            Hanya gunakan jendela dan situs yang telah
+            disediakan/diizinkan dalam ujian.
+        </div>
+
+    </div>
+
+
+    <!-- KELUAR SEB -->
+    <div class="section exit-section">
+
+        <div class="section-title">
+            🔴 SELESAI UJIAN — KELUAR DARI SEB
+        </div>
+
+        <div class="exit-warning">
+
+            <strong>
+                Jangan keluar dari SEB sebelum ujian selesai.
+            </strong>
+
+            Setelah ujian benar-benar selesai:
+
+            <ol>
+                <li>
+                    Pastikan jawaban ujian sudah dikirim.
+                </li>
+
+                <li>
+                    Pilih menu/tombol
+                    <strong>Quit / Keluar SEB</strong>.
+                </li>
+
+                <li>
+                    Jika SEB meminta
+                    <strong>Quit/Unlock Password</strong>,
+                    masukkan password yang diberikan oleh
+                    pengawas/dosen.
+                </li>
+
+                <li>
+                    Setelah password diterima, SEB akan keluar.
+                </li>
+            </ol>
+
+            <strong>
+                ⚠️ Password keluar SEB tidak dicantumkan di halaman ini.
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Safe Exam Browser — Halaman Informasi Ujian
+    </div>
+
+</div>
 
 </body>
 </html>
